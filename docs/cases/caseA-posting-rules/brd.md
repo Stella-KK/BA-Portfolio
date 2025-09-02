@@ -86,14 +86,8 @@ This initiative maps financial events (e.g., **Contribution / Withdrawal / Fee**
 
 ### 10) Business Acceptance (UAT)
 - Pass rate ≥ **95%**, all Sev-1/2 defects closed; KPIs met  
-- Scenario coverage: Contribution / Withdrawal / Fee / FX; reversals; missing rule; invalid account; unbalanced; missing FX  
-```gherkin
-Feature: Automated Journal Entries (Business)
-  Scenario: Contribution 100 CAD produces a balanced JE
-    Given a valid Contribution event
-    When the system processes the event
-    Then a posted JE exists with total debit = total credit
-    And the event→rule→JE audit trail is available
+- Scenario coverage: Contribution / Withdrawal / Fee / FX; reversals; missing rule; invalid account; unbalanced; missing FX
+
 ### 11) Assumptions & Dependencies
 - GL chart of accounts is maintained by Finance master-data and synchronized daily.
 - Events meet minimum data completeness (see **FRD**).
@@ -116,3 +110,11 @@ Feature: Automated Journal Entries (Business)
 - **JE (Journal Entry)**: Accounting document composed of debit/credit lines.  
 - **Trial Balance**: Account-level aggregation of DR/CR to validate zero difference.  
 - **Audit Trail**: Traceability from event to rule version and resulting JE.
+
+```gherkin
+Feature: Automated Journal Entries (Business)
+  Scenario: Contribution 100 CAD produces a balanced JE
+    Given a valid Contribution event
+    When the system processes the event
+    Then a posted JE exists with total debit = total credit
+    And the event→rule→JE audit trail is available
