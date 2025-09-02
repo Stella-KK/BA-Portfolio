@@ -88,6 +88,15 @@ This initiative maps financial events (e.g., **Contribution / Withdrawal / Fee**
 - Pass rate ≥ **95%**, all Sev-1/2 defects closed; KPIs met  
 - Scenario coverage: Contribution / Withdrawal / Fee / FX; reversals; missing rule; invalid account; unbalanced; missing FX
 
+```gherkin
+Feature: Automated Journal Entries (Business)
+  Scenario: Contribution 100 CAD produces a balanced JE
+    Given a valid Contribution event
+    When the system processes the event
+    Then a posted JE exists with total debit = total credit
+    And the event→rule→JE audit trail is available
+```
+
 ### 11) Assumptions & Dependencies
 - GL chart of accounts is maintained by Finance master-data and synchronized daily.
 - Events meet minimum data completeness (see **FRD**).
@@ -111,10 +120,4 @@ This initiative maps financial events (e.g., **Contribution / Withdrawal / Fee**
 - **Trial Balance**: Account-level aggregation of DR/CR to validate zero difference.  
 - **Audit Trail**: Traceability from event to rule version and resulting JE.
 
-```gherkin
-Feature: Automated Journal Entries (Business)
-  Scenario: Contribution 100 CAD produces a balanced JE
-    Given a valid Contribution event
-    When the system processes the event
-    Then a posted JE exists with total debit = total credit
-    And the event→rule→JE audit trail is available
+
