@@ -1,9 +1,12 @@
 # Business Requirements Document (BRD)
-## Posting Rules → Journal Entries (JE) → General Ledger (GL)
+## Accounts
+## Posting Rules Configuration
+## Journal Entries (JE)
+## Reports - Trial Balance
 
 > All examples are anonymized and synthetic for demonstration only.
 
-### 1) Executive Summary / Background
+### 1) Background
 Manual or semi-automated journal entries lead to longer period close, higher error rates, and weak auditability.  
 This initiative maps financial events (e.g., **Contribution / Withdrawal / Fee**) to **Posting Rules** to automatically generate **balanced double-entry JEs** with full status tracking and audit trails, improving close speed and accuracy.
 
