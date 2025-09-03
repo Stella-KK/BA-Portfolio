@@ -1,8 +1,8 @@
 # Business Requirements Document (BRD)
-## Accounts
-## Posting Rules Configuration
-## Journal Entries (JE)
-## Reports - Trial Balance
+## 1. Accounts
+   2. Posting Rules Configuration
+   3. Journal Entries (JE)
+   4. Reports - Trial Balance
 
 > All examples are anonymized and synthetic for demonstration only.
 
